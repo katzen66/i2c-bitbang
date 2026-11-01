@@ -8,6 +8,6 @@ void i2c_init(uint8_t pin_sda, uint8_t pin_scl, uint8_t delay_I2C);
 bool i2c_isidle(void);
 void i2c_start(void);
 void i2c_stop(void);
-bool i2c_write_byte(void);
+bool i2c_write_byte(uint8_t);
 #endif/* I2CBITBANG_H */
 
