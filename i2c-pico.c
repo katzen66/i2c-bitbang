@@ -19,7 +19,7 @@ void pin_low(uint8_t pin)
   gpio_put(pin, 0);
   gpio_set_dir(pin, GPIO_OUT);
 }
-void i2c_init(uint8_t pin_sda, uint8_t pin_scl, uint8_t delay_I2C)
+void i2c_initialize(uint8_t pin_sda, uint8_t pin_scl, uint8_t delay_I2C)
 {
   sda_pin = pin_sda, scl_pin=pin_scl, I2C_del = delay_I2C;
   gpio_init(sda_pin); gpio_init(scl_pin);
