@@ -9,5 +9,5 @@ bool i2c_isidle(void);
 void i2c_start(void);
 void i2c_stop(void);
 bool i2c_write_byte(void);
-#endif I2CBITBANG_H
+#endif/* I2CBITBANG_H */
 
