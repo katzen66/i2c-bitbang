@@ -1,0 +1,11 @@
+CompileFlags:
+  CompilationDatabase: lcd-echo/lsp
+  Remove:
+    - -mcpu=*
+    - -mfloat-abi=*
+    - -mno-unaligned-access
+    - -fno-reorder-functions
+    - -fno-inline-small-functions
+    - -specs=*
+  Add:
+    - -Wno-unknown-warning-option

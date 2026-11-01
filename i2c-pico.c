@@ -5,16 +5,16 @@
 #include <stdint.h>
 #include <sys/types.h>
 uint8_t sda_pin, scl_pin, I2C_del;
-void pin_release(uint8_t pin)
+static void pin_release(uint8_t pin)
 {
   gpio_set_dir(pin, GPIO_IN);
   gpio_pull_up(pin);
 }
-void scl_wait_released(void)
+static void scl_wait_released(void)
 {
   while (!gpio_get(scl_pin)) sleep_us(I2C_del);
 }
-void pin_low(uint8_t pin)
+static void pin_low(uint8_t pin)
 {
   gpio_put(pin, 0);
   gpio_set_dir(pin, GPIO_OUT);
@@ -58,7 +58,7 @@ static inline void write_bit(bool value)
   pin_low(scl_pin);
   sleep_us(I2C_del);
 }
-bool read_bit(void)
+static inline bool read_bit(void)
 {
   pin_release(sda_pin); sleep_us(I2C_del);
   pin_release(scl_pin); scl_wait_released();
