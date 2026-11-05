@@ -74,5 +74,5 @@ bool i2c_write_byte(uint8_t byte)
     write_bit(byte & 0x80);
     byte = byte << 1;
   }
-  return !read_bit();
+  return read_bit();
 }
